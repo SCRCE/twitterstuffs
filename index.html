@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ 
+<head>
+    <input id="word" type="text" />
+<button id="btn" value="Convert">Convert</button>
+<div id="output"><h1></h1></div>
+<div id="output"><h2></h2></div>>
+</head>
+ 
+<body>
+ <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <script>
+ $('#word').keyup(function () {
+  let word = $(this).val();
+   word = word.replace(/(\r\n|\n|\r)/gm, "");
+let result = word.toLowerCase();
+
+  let hiddenword=result.replace(/[aquickbrownfoxjumpsoverthelazydog]/g, '*');
+  $('#output h1').html(result);
+  $('#output h2').html(hiddenword);
+});
+  </script>
+ 
+</body>
+ 
+</html>
